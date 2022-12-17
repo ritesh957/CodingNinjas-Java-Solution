@@ -1,28 +1,32 @@
-
 public class Solution {
 
 	public static void spiralPrint(int matrix[][]){
-		if (matrix.length!=0) {
+		//Your code goes here
+				if (matrix.length!=0) {
             int x = matrix[0].length;
             int y = matrix.length;
-//        System.out.println(x+" "+y);
+            int count = 0;
             for (int i = 0; i < x / 2+1; i++) {
-                for (int j = i; j < x - i; j++) {
+                for (int j = i; j < x - i && count < x*y; j++) {
                     System.out.print(matrix[i][j] + " ");
+                    count++;
                 }
-//            System.out.println("First Loop Over");
-                for (int j = i + 1; j < y - i; j++) {
+
+                for (int j = i + 1; j < y - i && count < x*y; j++) {
                     System.out.print(matrix[j][x - 1 - i] + " ");
+                    count++;
                 }
-//            System.out.println("Secound Loop Over");
-                for (int j = x - 2 - i; j >= i; j--) {
+;
+                for (int j = x - 2 - i; j >=i  && count < x*y; j--) {
                     System.out.print(matrix[y - 1 - i][j] + " ");
+                    count++;
                 }
-//            System.out.println("Third Loop Over");
-                for (int j = y - 2 - i; j >= i + 1; j--) {
+
+                for (int j = y - 2 - i; j >= i + 1 && count < x*y; j--) {
                     System.out.print(matrix[j][i] + " ");
+                    count++;
                 }
-//            System.out.println("Forth Loop Over");
+
             }
         }
 	}
